@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EPSApp.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="{Binding PlantName, StringFormat='Plant = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding PhLow, StringFormat='Ph Low = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding PhHigh, StringFormat='Ph High = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding Sunlight, StringFormat='Sunlight = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding Humidity, StringFormat='Humidity = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding SoilDrainage, StringFormat='Soil Drainage = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding PlantType, StringFormat='Plant Type = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding Temperature, StringFormat='Temperature = {0}'}" FontSize="Medium"/>
+        <Label Text="{Binding SoilType, StringFormat='Soil Type = {0}'}" FontSize="Medium"/>
+    </StackLayout>
+    
+</ContentPage>

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EPSApp.Views.AnalysisMenuPage"
+             xmlns:vm="clr-namespace:EPSApp.ViewModels.Analysis">
+    <ContentPage.Content>
+        <Grid Padding="16">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <BoxView Color="Green" />
+            <BoxView Grid.Column="1" />
+            <BoxView Grid.Row="1"
+                 Color="#FFFFFF" Margin="0,8" />
+            <BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="#FFFFFF" />
+            <Button Text="Measurement" Command="{Binding MeasurementTapped}"/>
+            <Button Grid.Row="0" Grid.Column="1" Text="Pump" Command="{Binding PumpTapped}" />
+            <Button Grid.Row="1" Grid.Column="0"  Text="History" Command="{Binding HistoryTapped}"/>
+            <Label Grid.Row="1"
+               Grid.Column="1"
+               x:Name="ConnectionStatusText"
+               Text="{Binding Status}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EPSApp.Views.Home.PairingPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20,35,20,20">
+            <Label Text="Please Pair DIRTS Sensor to mobile device and try connecting again"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="Connect" Text="Connect" Clicked="OnClickConnect"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

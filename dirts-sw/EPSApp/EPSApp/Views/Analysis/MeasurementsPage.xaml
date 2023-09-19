@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EPSApp.Views.MeasurementsPage"
+             xmlns:vm="clr-namespace:EPSApp.ViewModels.Analysis">
+    <ContentPage.BindingContext>
+        <vm:MeasurementsViewModel></vm:MeasurementsViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Button x:Name="MeasureButton"  Text="Measure" Clicked="getMeasure" Margin="0,8,0,0"/>
+            <Button x:Name="WaitButton" Text="Please Wait.." Clicked="MeasureWarning" Margin="0,8,0,0" IsVisible="False" BackgroundColor="#E8DE4C"/>
+            <Label Text="Soil Measurements"
+                VerticalOptions="Start"  
+                HorizontalOptions="CenterAndExpand" Margin="0,12,0,0" />
+            <CollectionView x:Name="measurementsList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="8"
+                  RowDefinitions="Auto, *"
+                  ColumnDefinitions="Auto, *">
+                            <Label Grid.RowSpan="2" Grid.Column="1"
+                       Text="{Binding Label}"
+                       FontAttributes="Bold" 
+                       WidthRequest="45" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Row="0"
+                       Grid.Column="2"
+                       Text="{Binding Measure}"
+                       VerticalOptions="End" VerticalTextAlignment="End" />
+                            <Label Grid.Row="0"
+                       Grid.Column="3"
+                       Text="{Binding MeasureSimplified}"
+                       VerticalOptions="End" VerticalTextAlignment="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button x:Name="SuggestionButton" Text="Suggest Plants"  Clicked="OnClickSubmit" IsVisible="False" Padding="0,8" Margin="0,8"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

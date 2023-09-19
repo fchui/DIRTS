@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EPSApp.Views.HistoryPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Measurement History" FontSize="Large" HorizontalTextAlignment="Center"/>
+            <CollectionView x:Name="historyList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="8"
+                  RowDefinitions="Auto, *"
+                  ColumnDefinitions="0,90,40,70">
+                            <Label Grid.RowSpan="2" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="1"
+                       Text="{Binding id}"
+                       FontAttributes="Bold" 
+                       WidthRequest="45" LineBreakMode="NoWrap" MaxLines="1" HeightRequest="45" />
+                            <Label Grid.RowSpan="2" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+                       Text="{Binding dateString}"
+                       FontAttributes="Bold" 
+                       WidthRequest="45" LineBreakMode="NoWrap" MaxLines="2" />
+                            <Label Grid.Column="2" Grid.Row="0"
+                       Text="Ph"
+                       FontAttributes="Bold" 
+                       WidthRequest="15" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="2" Grid.Row="1"
+                       Text="{Binding Ph}"
+                       WidthRequest="15" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="3" Grid.Row="0"
+                       Text="Humidity"
+                       FontAttributes="Bold" 
+                       WidthRequest="4" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="3" Grid.Row="1"
+                       Text="{Binding Humidity}"
+                       WidthRequest="45" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="3" Grid.Row="2"
+                       Text="{Binding HumiditySimplified}"
+                       WidthRequest="45" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="4" Grid.Row="0"
+                       Text="Temperature"
+                       FontAttributes="Bold" 
+                       WidthRequest="100" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="4" Grid.Row="1"
+                       Text="{Binding Temperature}"
+                       WidthRequest="60" LineBreakMode="NoWrap" MaxLines="1" />
+                            <Label Grid.Column="4" Grid.Row="2"
+                       Text="{Binding TemperatureSimplified}"
+                       WidthRequest="60" LineBreakMode="NoWrap" MaxLines="1" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
